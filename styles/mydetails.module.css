@@ -1,0 +1,40 @@
+.container{
+width: 100%;
+display: flex;
+padding: 2.5%;
+justify-content: center;
+}
+
+.editcontainer{
+    width: 100%;
+    display: flex;
+    padding: .5%;
+    justify-content: center;
+    }
+    
+.formcontainer{
+width: 50%;
+display: flex;
+flex-direction: column;
+padding: 3.5%;
+background: white;
+border-radius: 6px;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.editformcontainer{
+    width: 48%;
+    margin: 1%;
+    display: flex;
+    flex-direction: column;
+    padding: 3.5%;
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+@media screen and (max-width: 1023px) {
+    .formcontainer{width: 100%;box-shadow: none;}
+    .editcontainer{flex-direction: column;padding: 2%;}
+    .editformcontainer{width: 98%;}
+}
