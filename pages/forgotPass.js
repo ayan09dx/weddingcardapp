@@ -73,7 +73,7 @@ export default function ForgotPass(props){
         <div className="loginpagecontainer">
         <div className="logincontainer">
              <div className="loginimgcontainer">
-                <img src="./login.jpg" alt="login-img" className="loginimg"/>
+                <img src="./signup.jpg" alt="login-img" className="loginimg"/>
             </div>
             <div className="logintextcontainer">
                <h2>Forgot Password</h2>

@@ -45,7 +45,7 @@ export default function Home(props){
        setLoad(true)
     }
 },[])
-console.log(userData)
+//console.log(userData)
   return(
     load && pagelevel==='entry'?
     <EnterDetails id={props.profile.id} email={props.profile.userid} apiURL={props.baseApiUrl}/>

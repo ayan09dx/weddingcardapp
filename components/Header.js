@@ -42,10 +42,10 @@ return(
                    <Link href="/"><a onClick={() => setBurgerstate(!burgerstate)} className={router.pathname==='/'?"nav-link active":"nav-link "}>Home</a></Link> 
                 </li>
                 <li className="nav-item">
-                    <Link href="/mycard"><a onClick={() => setBurgerstate(!burgerstate)} className={router.pathname==='mycard'?"nav-link active":"nav-link "}>My Card</a></Link> 
+                    <Link href="/mycard"><a onClick={() => setBurgerstate(!burgerstate)} className={router.pathname==='/mycard'?"nav-link active":"nav-link "}>My Card</a></Link> 
                 </li>
                 <li className="nav-item">
-                    <Link href="/share"><a onClick={() => setBurgerstate(!burgerstate)} className={router.pathname==='share'?"nav-link active":"nav-link "}>Share Card</a></Link> 
+                    <Link href="/share"><a onClick={() => setBurgerstate(!burgerstate)} className={router.pathname==='/share'?"nav-link active":"nav-link "}>Share Card</a></Link> 
                 </li>
                 <li className="nav-item">
                     <Link href="/myaccount"><a onClick={() => setBurgerstate(!burgerstate)} className={router.pathname=='/myaccount'?"nav-link active":"nav-link "}>My Account</a></Link> 

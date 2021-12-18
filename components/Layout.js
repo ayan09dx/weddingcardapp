@@ -3,11 +3,13 @@ import Header from './Header'
 import Footer from './Footer'
 import BottomNav from './BottomNav';
 import Head from 'next/head';
+import { useRouter } from "next/router"
+
 export default function Layout({children}){
 const [load,setLoad]=useState(false);
-
+const router=useRouter();
 useEffect(()=>{
-    if(children[1].props.profile==='' || children[1].props.profile===null ){
+    if(children[1].props.profile==='' || children[1].props.profile===null || router.pathname==="/cardview" ){
         setLoad(false)
     }
     else{
@@ -15,7 +17,7 @@ useEffect(()=>{
     }
 },[children])
 
-   
+   //console.log(router.pathname)
     return(
         load?
         <div>
@@ -35,7 +37,7 @@ useEffect(()=>{
             <Footer/>    
             <BottomNav/> 
         </div>
-        :<div className="main">{children}</div>
+        :<div className="main" style={router.pathname==="/cardview"?{marginBottom:0}:{}}>{children}</div>
     );
     }
     

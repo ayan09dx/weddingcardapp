@@ -274,11 +274,11 @@ const  onSubmit=async ()=>{
       <div className={styles.formcontainer}>
       <h3>Please Enter Date & Place Details</h3>
             <div className="input-container" style={language!==''?{}:{display:'none'}}>
-                <h3>Marraige Date - বিয়ের তারিখ</h3>
+                <h3>Marriage Date - বিয়ের তারিখ</h3>
                    <div className="input-field-container">
                         <i className="icon"><MdOutlineDateRange/></i>
                         <input className={(errormarriagedate!=='')?"input-field input-error":"input-field"} style={{padding:7.5}} 
-                        type="date" placeholder="Marraige Date - বিয়ের তারিখ" name="marraigedate" value={marraigedate} onChange={(e)=>{setMarraigeDate(e.target.value);setErrorMarraigeDate('')}} onBlur={checkMarraigeDate}/>
+                        type="date" placeholder="Marriage Date - বিয়ের তারিখ" name="marraigedate" value={marraigedate} onChange={(e)=>{setMarraigeDate(e.target.value);setErrorMarraigeDate('')}} onBlur={checkMarraigeDate}/>
                     </div> 
                     <p className="texterror" style={errormarriagedate===''?{display:'none'}:{}}>{errormarriagedate}</p>
             </div>
@@ -287,7 +287,7 @@ const  onSubmit=async ()=>{
                     <div className="input-field-container">
                         <i className="icon"><HiOutlineLocationMarker /></i>
                         <input className={(errormhall !== '') ? "input-field input-error" : "input-field"}
-                            type="text" placeholder="Marraige Hall Address" name="mhalladrress" value={mhall} onChange={(e) => { setMarraigeHall(e.target.value); setErrorMarraigeHall(''); } } onBlur={checkMarraigeHall} />
+                            type="text" placeholder="Marriage Hall Address" name="mhalladrress" value={mhall} onChange={(e) => { setMarraigeHall(e.target.value); setErrorMarraigeHall(''); } } onBlur={checkMarraigeHall} />
                     </div>
                     <p className="texterror" style={errormhall === '' ? { display: 'none' } : {}}>{errormhall}</p>
             </div>

@@ -1,0 +1,596 @@
+@font-face {
+  font-family: 'SignPainter';
+  src:url('fontwed.ttf');
+}
+@font-face {
+  font-family: "Bangla";
+  src:url('kalpana.ttf');
+}
+
+
+
+
+.h1{
+    text-align: center;
+    background-color: #FFE4DD;
+    padding: 5px 15px;
+    color:#213070;
+    font-weight: 100;
+    animation: mymove 3s;
+  
+
+}
+
+
+.container{
+  display:flex;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+.main{
+  min-height: 100vh;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 0px!important;
+}
+
+
+@keyframes mymove {
+  from { opacity: 0%;}
+  to { opacity: 100%;}
+}
+
+.invitetext{
+  position: absolute;
+  z-index: 101;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  top:66%;
+  font-size: 20px;
+  flex-direction: column;
+}
+.invitebuttuon{
+  height: 40px;
+  border-radius: 4px;
+  border: none;
+  background:linear-gradient( #8f6B29, #FDE08D, #DF9F28);
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+.invitebuttuon:hover{
+  background:linear-gradient( #d89608, #FDE08D, #af7406);
+  padding: 8px 8px;
+}
+.centerribbon{
+  position: absolute;
+  z-index: 100;
+  height: 300px;
+  width: 300px;
+  left:calc(50% - 150px);
+  border-radius: 50%;
+  top:calc(40% - 150px);
+  animation: mymove 3s;
+}
+.ribbonbox{
+  width: 100%;
+  position: relative;
+  display: flex;
+  height: 300px;
+  width: 300px;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../public/centerribbon.png') ;
+  background-size: cover;
+}
+.ribbondate{
+  color: white;
+  font-size: 1.5rem;
+}
+.ribonimg{
+  object-fit: cover;
+  width: 100%;
+  
+}
+.leftcover{
+  width:50%;
+  min-height: 100vh;
+  position: absolute;
+  left:0;
+  background: url('../public/leftcover.svg');
+  background-size: cover;
+  display: flex;
+  align-items: flex-end;
+}
+
+.bridegroom{
+  height: 60vh;
+  animation: bridein 5s;
+}
+
+@keyframes bridein {
+  from { margin-left: -100px;opacity: 30%;}
+  to { margin-left:0px;opacity: 100%;}
+}
+
+.rightcover{
+  width:50%;
+  min-height: 100vh;
+  position: absolute;
+  right:0;
+  background: url('../public/rightcover.svg');
+  background-size: cover;
+  
+}
+
+.spinwheel{
+  height:100vh;
+  width: 100%;
+  object-fit: cover;
+  margin-left: 50%;
+  animation: spin 5s infinite alternate;
+}
+@keyframes spin {
+  from {
+      transform:rotate(0deg);
+  }
+  to {
+      transform:rotate(10deg);
+  }
+}
+.rightcoveranimation{
+  transition: 4s ;
+  right:-50%;
+  
+}
+
+.leftcoveranimation{
+  transition: 4s;
+  left:-50%;
+}
+
+.ribbonfade{
+  opacity: 0;
+  transition: 1s;
+}
+.hide{
+  opacity:0%;
+  transition: 3s;
+}
+.invisible{
+  display: none;
+  transition: 2s;
+}
+.spinwheelmobile{display: none;}
+.pagewrapper{
+  width: 100%;
+  background: url('../public/pageback.svg');
+  background-size: cover;
+  overflow: hidden;
+ 
+}
+
+.page2wrapper{
+  width: 100%;
+  display: flex;
+ background-color: white;
+}
+
+@keyframes swipin-left {
+  from {
+      margin-left:-50%;
+  }
+  to {
+      margin-left: 0px;
+  }
+}
+.receptionleftcontainer{
+  width: 50%;
+  background: url('../public/receptiondayleft.png') no-repeat center center;
+  background-size: cover;
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: swipin-left 3s;
+}
+.linkleftcontainer{
+  width: 50%;
+  background: url('../public/linkimg.png') no-repeat center center;
+  background-size: cover;
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: swipin-left 3s;
+}
+.linkrightcontainer{
+  display: flex;
+  background: white;
+  width: 50%;
+  flex-direction: column;
+  padding: 4%;
+  justify-content: center;
+}
+
+
+.lastleftcontainer{
+  width: 50%;
+  background: url('../public/invitelastleft.png') no-repeat center center;
+  background-size: cover;
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: swipin-left 3s;
+  position: relative;
+}
+.leftcontainer{
+  width: 50%;
+  background: url('../public/weddingdayleftback.png') no-repeat center center;
+  background-size: cover;
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: swipin-left 3s;
+}
+.leftcontainerimg{
+  width: 80%;
+}
+.rightcontainerimg{
+  width: 90%;
+}
+
+.lastrightcontainer{
+  width: 50%;
+  height: 100vh;
+  background: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  animation: bridecenter-effect 3s;
+  position: relative;
+}
+
+.flowers{
+  position: absolute;
+  width: 50%;
+  top:0
+}
+
+.fireworks{
+  position: absolute;
+  width: 50%;
+  bottom:0
+}
+
+
+.rightcontainer{
+  width: 50%;
+  display: flex;
+  margin: 20px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  animation: bridecenter-effect 3s;
+  position: relative;
+  border-left: 4px solid #B71A00;
+  border-right: 4px solid #B71A00;
+}
+
+.dateribbon{
+  width: 100%;
+  margin-top: 2px;
+}
+.eventdate{
+  width: 40%;
+  margin-top: 2px;
+  position: relative;
+}
+.eventdatetext{
+  width: 100%;
+  top: 50%;
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  position: absolute;
+  text-align: center;
+  font-size: 1.5rem;
+  color:#B71A00 ;
+  font-weight: bold;
+}
+.hallimg{
+  width: 20%;
+  margin-top: 5px;
+}
+.halltext{
+  width: 60%;
+  padding:0;
+  margin: 3;
+  text-transform: capitalize;
+  color:#B71A00;
+  font-size: 1.5rem;
+}
+.bridebadge{
+  position: absolute;
+  border:2px solid #B71A00;
+  border-radius: 50%;
+  height: 200px;
+  width:  200px;
+  z-index: 1000;
+  top: 40%;
+  left: 35%; 
+  transform: translate(-50%, -50%); 
+}
+.badgeimg{
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.groombadge{
+  position: absolute;
+  border:2px solid #B71A00;
+  border-radius: 50%;
+  height: 200px;
+  width:  200px;
+  z-index: 1000;
+  top: 40%;
+  left: 68%; 
+  transform: translate(-50%, -50%); 
+}
+.rightbottomlogo{
+  position: absolute;
+  width:30%;
+  bottom: 0;
+}
+
+.pagecontent{
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+.shangkhaleft{
+  position: absolute;
+  width:120px;
+  top: 30%;
+  left:5%;
+  animation: shangkha-left 3s;
+}
+@keyframes shangkha-left {
+  from {
+      left:-100px;
+  }
+  to {
+      left:5%;
+  }
+}
+
+.shangkharight{
+  position: absolute;
+  width:120px;
+  top: 30%;
+  right: 5%;
+  animation: shangkha-right 3s;
+}
+@keyframes shangkha-right {
+  from {
+      right:-100px;
+  }
+  to {
+      right:5%;
+  }
+}
+
+.elephantleft{
+  position: absolute;
+  width:250px;
+  bottom: 0;
+  left:0;
+  animation: elephant-left 3s;
+}
+@keyframes elephant-left {
+  from {
+      left:-100px;
+  }
+  to {
+      left:0px;
+  }
+}
+
+.elephantright{
+  position: absolute;
+  width:250px;
+  bottom: 0;
+  right: 0;
+  animation: elephant-right 3s;
+}
+@keyframes elephant-right {
+  from {
+      right:-100px;
+  }
+  to {
+      right:0px;
+  }
+}
+.stage{
+  position: absolute;
+  width:70%;
+  height: 60vh;
+  left:15%;
+  top:5vh;
+  }
+
+  .jatra{
+    position: absolute;
+    width:70%;
+    height: 60vh;
+    right:15%;
+    top:5vh;
+    animation: jatra-effect 5s;
+  }
+.swipein{
+  opacity:100%;
+  transition: 3s;
+}
+  @keyframes jatra-effect{
+    from {
+        opacity:50%;right:-100px;
+    }
+    to {
+        opacity:100%;right:15%;
+    }
+  }
+
+  .stagecouple{
+    height: 35vh;
+    width: 30%;
+    position: absolute;
+    animation: bridein 5s;
+    left:35%;
+    top:20vh;
+    animation: bridecenter-effect 5s;
+  }
+
+  @keyframes bridecenter-effect{
+    from {
+        opacity:30%;
+    }
+    to {
+        opacity:100%;
+    }
+  }
+.yogga{
+  position: absolute;
+  width:10%;
+  left:45%;
+  top:55vh;
+}
+
+.pagetexts{
+  position: absolute;
+  border-radius: 10px;
+  width:100%;
+  bottom:15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ font-size: 24px;
+}
+
+.button{
+  border: none;
+  width: 40%;
+  padding: 8px 8px 8px 8px;
+  background-color: rgb(253, 212, 30);
+  border-radius: 20px;
+  font-size: bold;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 1280px) {
+ .bridebadge{width: 180px;height: 180px;left:30%}
+ .groombadge{width: 180px;height: 180px;left:70%}
+ .spinwheel{
+   object-fit: contain;
+ }
+ .eventdatetext{font-size: .95rem;}
+}
+
+@media only screen and (max-width: 980px) {
+  .lastrightcontainer{justify-content: flex-start;}
+ .leftcover{width: 100%;align-items: flex-start;justify-content: center;}
+ .bridegroom{height: 30vh;margin-top: 60px;}
+ .rightcover{display: none;}
+ .centerribbon{width: 150px;left:calc(50% - 75px);top:40%}
+ .ribbonbox{width: 150px;height: 150px;}
+ .ribbondate{font-size: 1rem;}
+ .invitetext{font-size: 14px;top:65%}
+ .spinwheelmobile{
+   display: flex;
+   position: absolute;
+   z-index: 100;
+   height: 200px;
+   width: 200px;
+   left:calc(100% - 100px);
+   border-radius: 50%;
+   top:calc(10% - 100px);
+   animation: spin 3s infinite alternate-reverse;
+   
+ }
+ .leftcoveranimation{
+   left: -100%;
+ }
+ .invitebuttuon{margin-top: 10px;}
+.elephantleft{width: 150px;}
+.elephantright{width: 150px;}
+.stage{width:98%;left:1%;}
+.jatra{width:98%;right:0%;}
+@keyframes jatra-effect{
+  from {
+      opacity:50%;right:-100px;
+  }
+  to {
+      opacity:100%;right:1%;
+  }
+}
+.stagecouple{
+  width: 25%;
+  left:37.5%;
+  top:18vh;
+}
+.yogga{
+  position: absolute;
+  width:25%;
+  left:37.5%;
+  top:45vh;
+}
+.shangkhaleft{display: none;}
+.shangkharight
+    {width:18%;
+      top: 68%;
+      left: 40%;}
+
+  .pagetexts{
+    bottom:32vh;
+    font-size: 14px;
+  }
+  .eventdate{width: 30%;}
+  .eventdatetext{font-size: 1.2rem; width: 100%;top:42%}
+  .page2wrapper{flex-direction: column;}
+  .leftcontainer{width: 100%;height: 40vh;}
+  .lastrightcontainer{width: 100%;height: auto;}
+  .rightcontainer{width:100%;height: 60vh;margin: 0;}
+  .rightbottomlogo{width: 20%;}
+  .leftcontainerimg{width: 70%;}
+   .receptionleftcontainer{width: 100%;height: 40vh;}
+   .lastleftcontainer{width: 100%;height: 50vh;}
+   .linkleftcontainer{width: 100%;height: 20vh;}
+   .mobhead{font-size: 12px;height: auto;margin-bottom: 20px;font-weight: bold;}
+   .linkrightcontainer{width: 100%;}
+   .flowers{width: 100%;}
+   .fireworks{width: 100%;top:0}
+   .halltext{
+    width: 80%;
+    font-size: 1.2rem;
+  }
+
+ }
+
+ @media only screen and (max-width: 600px) {
+.bridebadge{height: 120px;width: 120px;}
+.groombadge{height: 120px;width: 120px;}
+.eventdate{width: 50%;}
+.eventdatetext{font-size: 1.2rem; width: 100%;}
+
+ }
