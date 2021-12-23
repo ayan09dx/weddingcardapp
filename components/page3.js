@@ -38,7 +38,7 @@ export default function Page3(props){
             </div>
             
             <img src="./hallpic.png" alt="bottomlogo" className={styles.hallimg}/>
-            <p className={styles.halltext}>
+            <p className={styles.halltext} style={{wordWrap:'break-word'}}>
             {props.lang.id==='en'?props.data.rhall:props.data.rhallbangla}
             </p>
             <img src="./rightbottomlogo.png" alt="bottomlogo" className={styles.rightbottomlogo}/>

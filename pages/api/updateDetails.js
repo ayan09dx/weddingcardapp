@@ -9,11 +9,13 @@ export default async function handleLogin(req,res){
   let data = JSON.parse(req.body);
   let res_data="";
   data = verifyAPIToken(data.token);
-  console.log(data)
+  //console.log(data)
   if(data){
   let doc = await db.collection('details').updateOne({email:data.email},{$set:{language:data.language,bridename:data.bridename,groomname:data.groomname,bridenamebangla:data.bridenamebangla,
     groomnamebangla:data.groomnamebangla,marraigedate:data.marraigedate,mhall:data.mhall,mhallbangla:data.mhallbangla,rhall:data.rhall,
-    rhallbangla:data.rhallbangla,brideimage:data.brideimage,groomimage:data.groomimage}})
+    rhallbangla:data.rhallbangla,brideimage:data.brideimage,groomimage:data.groomimage,bridefathername:data.bridefathername,bridefathernamebangla:data.bridefathernamebangla,bridemothername:data.bridemothername,bridemothernamebangla:data.bridemothernamebangla,bridehome:data.bridehome,bridehomebangla:data.bridehomebangla,
+    groomfathername:data.groomfathername,groomfathernamebangla:data.groomfathernamebangla,groommothername:data.groommothername,groommothernamebangla:data.groommothernamebangla,
+    groomhome:data.groomhome,groomhomebangla:data.groomhomebangla}})
    console.log(doc)
   if(doc!==null){
     res_data={message:'ok'}

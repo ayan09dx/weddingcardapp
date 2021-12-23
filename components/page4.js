@@ -48,14 +48,14 @@ export default function Page4(props){
               {lang.lastpagereq}
           </p>
           <div style={{width:'90%',textAlign:'center'}}>
-          <p style={lang.id==='en'?{fontFamily:'SignPainter',fontSize:24,color:'#B71A00',textAlign:'center'}:{fontFamily:'Bangla',fontSize:24,color:'#B71A00',textAlign:'center'}}>
+          <p style={lang.id==='en'?{fontFamily:'SignPainter',fontSize:24,color:'#B71A00',textAlign:'center',wordWrap:'break-word'}:{fontFamily:'Bangla',fontSize:24,color:'#B71A00',textAlign:'center',wordWrap:'break-word'}}>
               {lang.biye}<br/>{marriagedate}<br/>{marraigeday}<br/><br/>{props.lang.id==='en'?props.data.mhall:props.data.mhallbangla}
           </p>
 
           </div>
          
           <div style={{width:'90%',textAlign:'center'}}>
-          <p style={lang.id==='en'?{fontFamily:'SignPainter',fontSize:24,color:'#B71A00',textAlign:'center'}:{fontFamily:'Bangla',fontSize:24,color:'#B71A00',textAlign:'center'}}>
+          <p style={lang.id==='en'?{fontFamily:'SignPainter',fontSize:24,color:'#B71A00',textAlign:'center',wordWrap:'break-word'}:{fontFamily:'Bangla',fontSize:24,color:'#B71A00',textAlign:'center',wordWrap:'break-word'}}>
               {lang.reception}<br/>{receptiondate}<br/>{receptionday}<br/><br/>{props.lang.id==='en'?props.data.rhall:props.data.rhallbangla}
           </p>
         

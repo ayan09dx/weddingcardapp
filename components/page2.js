@@ -39,7 +39,7 @@ export default function Page2(props){
           </div>
           
           <img src="./hallpic.png" alt="bottomlogo" className={styles.hallimg}/>
-          <p className={styles.halltext}>
+          <p className={styles.halltext} style={{wordWrap:'break-word'}}>
            {props.lang.id==='en'?props.data.mhall:props.data.mhallbangla}
           </p>
           <img src="./rightbottomlogo.png" alt="bottomlogo" className={styles.rightbottomlogo}/>

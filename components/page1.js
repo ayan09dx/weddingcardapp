@@ -25,7 +25,7 @@ useEffect(() => {
 const viewJourney=()=>{
      setJourney(true);
      setTimeout(() => {
-          props.setPage('page2');
+          props.setPage('page5');
         }, 4000);
 }
 

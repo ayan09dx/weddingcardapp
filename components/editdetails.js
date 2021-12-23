@@ -39,9 +39,35 @@ export default function MyDetails(props){
     const [groomimage,setGroomImage]=useState(props.data.groomimage);
     const [brideimagename,setBrideImageName]=useState(props.data.brideimagename);
     const [groomimagename,setGroomImageName]=useState(props.data.groomimagename);
+    const [bridefathername,setBrideFatherName]=useState(props.data.bridefathername)
+    const [errorbridefathername,setErrorBrideFatherName]=useState('');
+    const [bridefathernamebangla,setBrideFatherNameBangla]=useState(props.data.bridefathernamebangla)
+    const [errorbridefathernamebangla,setErrorBrideFatherNameBangla]=useState('');
+    const [bridemothername,setBrideMotherName]=useState(props.data.bridemothername)
+    const [errorbridemothername,setErrorBrideMotherName]=useState('');
+    const [bridemothernamebangla,setBrideMotherNameBangla]=useState(props.data.bridemothernamebangla);
+    const [errorbridemothernamebangla,setErrorBrideMotherNameBangla]=useState('');
+    const [groomfathername,setGroomFatherName]=useState(props.data.groomfathername)
+    const [errorgroomfathername,setErrorGroomFatherName]=useState('');
+    const [groomfathernamebangla,setGroomFatherNameBangla]=useState(props.data.groomfathernamebangla)
+    const [errorgroomfathernamebangla,setErrorGroomFatherNameBangla]=useState('');
+    const [groommothername,setGroomMotherName]=useState(props.data.groommothername)
+    const [errorgroommothername,setErrorGroomMotherName]=useState('');
+    const [groommothernamebangla,setGroomMotherNameBangla]=useState(props.data.groommothernamebangla)
+    const [errorgroommothernamebangla,setErrorGroomMotherNameBangla]=useState('');
+    const [bridehome,setBrideHome]=useState(props.data.bridehome)
+    const [errorbridehome,setErrorBrideHome]=useState('');
+    const [bridehomebangla,setBrideHomeBangla]=useState(props.data.bridehomebangla)
+    const [errorbridehomebangla,setErrorBrideHomeBangla]=useState('');
+    const [groomhome,setGroomHome]=useState(props.data.groomhome)
+    const [errorgroomhome,setErrorGroomHome]=useState('');
+    const [groomhomebangla,setGroomHomeBangla]=useState(props.data.groomhomebangla)
+    const [errorgroomhomebangla,setErrorGroomHomeBangla]=useState('');
+
     const [errorsubmit,setErrorSubmit]=useState(false);
     const [successubmit,setSuccessSubmit]=useState(false);
     const [disabled,setDisabled]=useState(true);
+    
 
     const checkBrideName=()=>{
         if(language==='bn'){
@@ -178,8 +204,181 @@ export default function MyDetails(props){
             }
     }
 
+    const checkBrideFatherName=()=>{
+        if(language==='bn'){
+            return true
+        }
+        else if(bridefathername===""){
+            setErrorBrideFatherName('Please enter bride\'s father\'s name');
+            return false
+        }
+            else{
+                setErrorBrideFatherName('');
+                return true
+            }
+    }
+    
+    const checkBrideMotherName=()=>{
+        if(language==='bn'){
+            return true
+        }
+        else if(bridemothername===""){
+            setErrorBrideMotherName('Please enter bride\'s mother\'s name');
+            return false
+        }
+            else{
+                setErrorBrideMotherName('');
+                return true
+            }
+    }
+    const checkBrideFatherNameBangla=()=>{
+        if(language==='en'){
+            return true
+        }
+        else if(bridefathernamebangla===""){
+            setErrorBrideFatherNameBangla('কনের পিতার নাম লিখুন');
+            return false
+        }
+            else{
+                setErrorBrideFatherNameBangla('');
+                return true
+            }
+    }
+
+    const checkGroomFatherName=()=>{
+        if(language==='bn'){
+            return true
+        }
+        else if(groomfathername===""){
+            setErrorGroomFatherName('Please enter groom\'s father\'s name');
+            return false
+        }
+            else{
+                setErrorGroomFatherName('');
+                return true
+            }
+    }
+
+    const checkGroomFatherNameBangla=()=>{
+        if(language==='en'){
+            return true
+        }
+        else if(groomfathernamebangla===""){
+            setErrorGroomFatherNameBangla('বরের পিতার নাম লিখুন');
+            return false
+        }
+            else{
+                setErrorGroomFatherNameBangla('');
+                return true
+            }
+    }
+
+    const checkGroomMotherName=()=>{
+        if(language==='bn'){
+            return true
+        }
+        else if(groommothername===""){
+            setErrorGroomMotherName('Please enter groom\'s mother\'s name');
+            return false
+        }
+            else{
+                setErrorGroomMotherName('');
+                return true
+            }
+    }
+
+    const checkGroomMotherNameBangla=()=>{
+        if(language==='en'){
+            return true
+        }
+        else if(groommothernamebangla===""){
+            setErrorGroomMotherNameBangla('বরের পিতার নাম লিখুন');
+            return false
+        }
+            else{
+                setErrorGroomMotherNameBangla('');
+                return true
+            }
+    }
+
+
+    const checkBrideMotherNameBangla=()=>{
+        if(language==='en'){
+            return true
+        }
+        else if(bridemothernamebangla===""){
+            setErrorBrideMotherNameBangla('কনের মায়ের নাম লিখুন');
+            return false
+        }
+            else{
+                setErrorBrideMotherNameBangla('');
+                return true
+            }
+    }
+    const checkBrideHome=()=>{
+        if(language==='bn'){
+            return true
+        }
+        else if(bridehome===""){
+            setErrorBrideHome('Please enter bride\'s home address');
+            return false
+        }
+            else{
+                setErrorBrideHome('');
+                return true
+            }
+    }
+
+    const checkBrideHomeBangla=()=>{
+        if(language==='en'){
+            return true
+        }
+        else if(bridehomebangla===""){
+            setErrorBrideHomeBangla('কনের বাড়ির নাম লিখুন');
+            return false
+        }
+            else{
+                setErrorBrideHomeBangla('');
+                return true
+            }
+    }
+
+    const checkGroomHome=()=>{
+        if(language==='bn'){
+            return true
+        }
+        else if(groomhome===""){
+            setErrorGroomHome('Please enter groom\'s home address');
+            return false
+        }
+            else{
+                setErrorGroomHome('');
+                return true
+            }
+    }
+
+    const checkGroomHomeBangla=()=>{
+        if(language==='en'){
+            return true
+        }
+        else if(groomhomebangla===""){
+            setErrorGroomHomeBangla('বরের বাড়ির নাম লিখুন');
+            return false
+        }
+            else{
+                setErrorGroomHomeBangla('');
+                return true
+            }
+    }
+
 const dataCheck=(level)=>{
-    if(checkBrideName()&&checkBrideNameBangla()&&checkGroomName()&&checkGroomNameBangla()&&checkMarraigeDate()&&checkMarraigeHall()&&checkMarraigeHallBangla()&&checkReceptionDate()&&checkReceptionHall()&&checkReceptionHallBangla())
+    if(checkBrideName()&&checkBrideNameBangla()&&checkBrideFatherName()&&checkBrideFatherNameBangla()
+    &&checkBrideMotherName()&&checkBrideMotherNameBangla()&&checkBrideHome()&&checkBrideHomeBangla()&&
+      checkGroomName()&&checkGroomNameBangla()&&checkGroomFatherName()&&checkGroomFatherNameBangla()&&
+      checkGroomMotherName()&&checkGroomMotherNameBangla()&&checkGroomHome()&&checkGroomHomeBangla()&&
+      checkMarraigeDate()&&checkMarraigeHall()&&checkMarraigeHallBangla()&&checkReceptionDate()
+      &&checkReceptionHall()&&checkReceptionHallBangla()
+      )
     return true;
     else
     return false;
@@ -191,7 +390,10 @@ const  onSubmit=async ()=>{
     if(dataCheck()){
         let req_data={email:props.data.email,language:language,bridename:bridename,groomname:groomname,bridenamebangla:bridenamebangla,
         groomnamebangla:groomnamebangla,marraigedate:marraigedate,mhall:mhall,mhallbangla:mhallbangla,rhall:rhall,
-        rhallbangla:rhallbangla,receptiondate:receptiondate,brideimage:brideimage,brideimagename:brideimagename,groomimage:groomimage,groomimagename:groomimagename}
+        rhallbangla:rhallbangla,receptiondate:receptiondate,brideimage:brideimage,brideimagename:brideimagename,groomimage:groomimage,groomimagename:groomimagename,
+        bridefathername:bridefathername,bridefathernamebangla:bridefathernamebangla,bridemothername:bridemothername,bridemothernamebangla:bridemothernamebangla,bridehome:bridehome,bridehomebangla:bridehomebangla,
+        groomfathername:groomfathername,groomfathernamebangla:groomfathernamebangla,groommothername:groommothername,groommothernamebangla:groommothernamebangla,
+        groomhome:groomhome,groomhomebangla:groomhomebangla}
        // console.log(req_data)
         let payload={token:jwt.sign(req_data,API_SECRET_KEY,{expiresIn:'300s'})};
        // console.log(jwt.verify(payload.token,API_SECRET_KEY))
@@ -236,6 +438,7 @@ const  onSubmit=async ()=>{
                 
             
                         <div className="input-container" style={(language === 'en' || language === 'all') ? {} : { display: 'none' }}>
+                        <h4>Bride's First Name</h4>
                             <div className="input-field-container">
                                 <i className="icon"><GiChessQueen /></i>
                                 <input className={(errorbridename !== '') ? "input-field input-error" : "input-field"} disabled={!edit}
@@ -245,6 +448,7 @@ const  onSubmit=async ()=>{
                         </div>
                         
                         <div className="input-container" style={(language === 'bn' || language === 'all') ? {} : { display: 'none' }}>
+                        <h4>কনের ভালো নাম</h4>
                             <div className="input-field-container">
                                 <i className="icon"><GiChessQueen /></i>
                                 <input className={(errorbridenamebangla !== '') ? "input-field input-error" : "input-field"} disabled={!edit}
@@ -252,8 +456,69 @@ const  onSubmit=async ()=>{
                             </div>
                             <p className="texterror" style={errorbridenamebangla === '' ? { display: 'none' } : {}}>{errorbridenamebangla}</p>
                         </div>
-                    
+                        
                         <div className="input-container" style={(language === 'en' || language === 'all') ? {} : { display: 'none' }}>
+                        <h4>Bride's Father Name</h4>
+                            <div className="input-field-container">
+                                <i className="icon"><AiOutlineUser /></i>
+                                <input className={(errorbridefathername !== '') ? "input-field input-error" : "input-field"} disabled={!edit}
+                                    type="text" placeholder="Bride's Father Name" name="bridefathername" value={bridefathername} onChange={(e) => { setBrideFatherName(e.target.value); setErrorBrideFatherName(''); } } onBlur={checkBrideFatherName} />
+                            </div>
+                            <p className="texterror" style={errorbridefathername === '' ? { display: 'none' } : {}}>{errorbridefathername}</p>
+                        </div>
+                        
+                        <div className="input-container" style={(language === 'bn' || language === 'all') ? {} : { display: 'none' }}>
+                        <h4>কনের পিতার নাম</h4>
+                            <div className="input-field-container">
+                                <i className="icon"><AiOutlineUser /></i>
+                                <input className={(errorbridefathernamebangla !== '') ? "input-field input-error" : "input-field"} disabled={!edit}
+                                    type="text" placeholder="কনের পিতার নাম" name="bridefathernamebangla" value={bridefathernamebangla} onChange={(e) => { setBrideFatherNameBangla(e.target.value); setErrorBrideFatherNameBangla(''); } } onBlur={checkBrideFatherNameBangla} />
+                            </div>
+                            <p className="texterror" style={errorbridefathernamebangla === '' ? { display: 'none' } : {}}>{errorbridefathernamebangla}</p>
+                        </div>
+
+                        <div className="input-container" style={(language === 'en' || language === 'all') ? {} : { display: 'none' }}>
+                        <h4>Bride's Mother's Name</h4>
+                            <div className="input-field-container">
+                                <i className="icon"><GiChessQueen /></i>
+                                <input className={(errorbridemothername !== '') ? "input-field input-error" : "input-field"} disabled={!edit}
+                                    type="text" placeholder="Bride's Mother's Name" name="bridemothername" value={bridemothername} onChange={(e) => { setBrideMotherName(e.target.value); setErrorBrideMotherName(''); } } onBlur={checkBrideMotherName} />
+                            </div>
+                            <p className="texterror" style={errorbridemothername === '' ? { display: 'none' } : {}}>{errorbridemothername}</p>
+                        </div>
+                        
+                        <div className="input-container" style={(language === 'bn' || language === 'all') ? {} : { display: 'none' }}>
+                        <h4>কনের মায়ের নাম</h4>
+                            <div className="input-field-container">
+                                <i className="icon"><GiChessQueen /></i>
+                                <input className={(errorbridemothernamebangla !== '') ? "input-field input-error" : "input-field"} disabled={!edit}
+                                    type="text" placeholder="কনের মায়ের নাম" name="bridemothernamebangla" value={bridemothernamebangla} onChange={(e) => { setBrideMotherNameBangla(e.target.value); setErrorBrideMotherNameBangla(''); } } onBlur={checkBrideMotherNameBangla} />
+                            </div>
+                            <p className="texterror" style={errorbridemothernamebangla === '' ? { display: 'none' } : {}}>{errorbridemothernamebangla}</p>
+                        </div>
+
+                        <div className="input-container" style={(language === 'en' || language === 'all') ? {} : { display: 'none' }}>
+                        <h4>Bride's Home Address</h4>
+                                <div className="input-field-container">
+                                    <i className="icon"><HiOutlineLocationMarker /></i>
+                                    <input className={(errorbridehome !== '') ? "input-field input-error" : "input-field"} disabled={!edit}
+                                        type="text" placeholder="Bride's Home Address" name="bridehome" value={bridehome} onChange={(e) => { setBrideHome(e.target.value); setErrorBrideHome(''); } } onBlur={checkBrideHome} />
+                                </div>
+                                <p className="texterror" style={errorbridehome === '' ? { display: 'none' } : {}}>{errorbridehome}</p>
+                        </div>
+
+                        <div className="input-container" style={(language === 'bn' || language === 'all') ? {} : { display: 'none' }}>
+                        <h4>কনের বাড়ির ঠিকানা</h4>
+                                <div className="input-field-container">
+                                    <i className="icon"><HiOutlineLocationMarker /></i>
+                                    <input className={(errorbridehomebangla !== '') ? "input-field input-error" : "input-field"} disabled={!edit}
+                                        type="text" placeholder="কনের বাড়ির ঠিকানা" name="bridehomebangla" value={bridehomebangla} onChange={(e) => { setBrideHomeBangla(e.target.value); setErrorBrideHomeBangla(''); } } onBlur={checkBrideHomeBangla} />
+                                </div>
+                                <p className="texterror" style={errorbridehomebangla === '' ? { display: 'none' } : {}}>{errorbridehomebangla}</p>
+                        </div>
+
+                        <div className="input-container" style={(language === 'en' || language === 'all') ? {} : { display: 'none' }}>
+                        <h4>Groom's First Name</h4>
                             <div className="input-field-container">
                                 <i className="icon"><AiOutlineUser /></i>
                                 <input className={(errorgroomname !== '') ? "input-field input-error" : "input-field"} disabled={!edit}
@@ -263,6 +528,7 @@ const  onSubmit=async ()=>{
                         </div>
                 
                         <div className="input-container" style={(language === 'bn' || language === 'all') ? {} : { display: 'none' }}>
+                        <h4>বরের ভালো নাম</h4>
                             <div className="input-field-container">
                                 <i className="icon"><AiOutlineUser /></i>
                                 <input className={(errorgroomnamebangla !== '') ? "input-field input-error" : "input-field"} disabled={!edit}
@@ -270,6 +536,67 @@ const  onSubmit=async ()=>{
                             </div>
                             <p className="texterror" style={errorgroomnamebangla === '' ? { display: 'none' } : {}}>{errorgroomnamebangla}</p>
                         </div>
+
+                        <div className="input-container" style={(language === 'en' || language === 'all') ? {} : { display: 'none' }}>
+                        <h4>Groom's Father's Name</h4>
+                        <div className="input-field-container">
+                            <i className="icon"><AiOutlineUser /></i>
+                            <input className={(errorgroomfathername !== '') ? "input-field input-error" : "input-field"} disabled={!edit}
+                                type="text" placeholder="Groom's Father's Name" name="groomfathername" value={groomfathername} onChange={(e) => { setGroomFatherName(e.target.value); setErrorGroomFatherName(''); } } onBlur={checkGroomFatherName} />
+                        </div>
+                        <p className="texterror" style={errorgroomfathername === '' ? { display: 'none' } : {}}>{errorgroomfathername}</p>
+                    </div>
+        
+                <div className="input-container" style={(language === 'bn' || language === 'all') ? {} : { display: 'none' }}>
+                <h4>বরের পিতার নাম</h4>
+                    <div className="input-field-container">
+                        <i className="icon"><AiOutlineUser /></i>
+                        <input className={(errorgroomfathernamebangla !== '') ? "input-field input-error" : "input-field"} disabled={!edit}
+                            type="text" placeholder="বরের পিতার নাম" name="groomfathernamebangla" value={groomfathernamebangla} onChange={(e) => { setGroomFatherNameBangla(e.target.value); setErrorGroomFatherNameBangla(''); } } onBlur={checkGroomFatherNameBangla} />
+                    </div>
+                    <p className="texterror" style={errorgroomfathernamebangla === '' ? { display: 'none' } : {}}>{errorgroomfathernamebangla}</p>
+                </div>
+
+                <div className="input-container" style={(language === 'en' || language === 'all') ? {} : { display: 'none' }}>
+                <h4>Groom's Mother's Name</h4>
+                    <div className="input-field-container">
+                        <i className="icon"><GiChessQueen /></i>
+                        <input className={(errorgroommothername !== '') ? "input-field input-error" : "input-field"} disabled={!edit}
+                            type="text" placeholder="Groom's Mother's Name" name="groommothername" value={groommothername} onChange={(e) => { setGroomMotherName(e.target.value); setErrorGroomMotherName(''); } } onBlur={checkGroomMotherName} />
+                    </div>
+                    <p className="texterror" style={errorgroommothername === '' ? { display: 'none' } : {}}>{errorgroommothername}</p>
+                </div>
+        
+                <div className="input-container" style={(language === 'bn' || language === 'all') ? {} : { display: 'none' }}>
+                <h4>বরের মায়ের নাম</h4>
+                    <div className="input-field-container">
+                        <i className="icon"><GiChessQueen /></i>
+                        <input className={(errorgroommothernamebangla !== '') ? "input-field input-error" : "input-field"} disabled={!edit}
+                            type="text" placeholder="বরের মায়ের নাম" name="groommothernamebangla" value={groommothernamebangla} onChange={(e) => { setGroomMotherNameBangla(e.target.value); setErrorGroomMotherNameBangla(''); } } onBlur={checkGroomMotherNameBangla} />
+                    </div>
+                    <p className="texterror" style={errorgroommothernamebangla === '' ? { display: 'none' } : {}}>{errorgroommothernamebangla}</p>
+                </div>
+
+                <div className="input-container" style={(language === 'en' || language === 'all') ? {} : { display: 'none' }}>
+                <h4>Groom's Home Address</h4>
+                        <div className="input-field-container">
+                            <i className="icon"><HiOutlineLocationMarker /></i>
+                            <input className={(errorgroomhome !== '') ? "input-field input-error" : "input-field"} disabled={!edit}
+                                type="text" placeholder="Groom's Home Address" name="groomhome" value={groomhome} onChange={(e) => { setGroomHome(e.target.value); setErrorGroomHome(''); } } onBlur={checkGroomHome} />
+                        </div>
+                        <p className="texterror" style={errorgroomhome === '' ? { display: 'none' } : {}}>{errorgroomhome}</p>
+                </div>
+
+                <div className="input-container" style={(language === 'bn' || language === 'all') ? {} : { display: 'none' }}>
+                <h4>বরের বাড়ির ঠিকানা</h4>
+                        <div className="input-field-container">
+                            <i className="icon"><HiOutlineLocationMarker /></i>
+                            <input className={(errorgroomhomebangla !== '') ? "input-field input-error" : "input-field"} disabled={!edit}
+                                type="text" placeholder="বরের বাড়ির ঠিকানা" name="groomhomebangla" value={groomhomebangla} onChange={(e) => { setGroomHomeBangla(e.target.value); setErrorGroomHomeBangla(''); } } onBlur={checkGroomHomeBangla} />
+                        </div>
+                        <p className="texterror" style={errorgroomhomebangla === '' ? { display: 'none' } : {}}>{errorgroomhomebangla}</p>
+                </div>
+
 
         
     

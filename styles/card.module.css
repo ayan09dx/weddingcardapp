@@ -232,6 +232,17 @@
   animation: swipin-left 3s;
   position: relative;
 }
+.bridegroomdetailsleftcontainer{
+  width: 50%;
+  background: url('../public/bridegroomdetailsback.jpg') no-repeat center center;
+  background-size: cover;
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: swipin-left 3s;
+}
 .leftcontainer{
   width: 50%;
   background: url('../public/weddingdayleftback.png') no-repeat center center;
@@ -242,6 +253,9 @@
   justify-content: center;
   align-items: center;
   animation: swipin-left 3s;
+}
+.bridegroomdetailsleftcontainerimg{
+  width: 400px;border-radius: 50%;height: 400px;
 }
 .leftcontainerimg{
   width: 80%;
@@ -568,11 +582,13 @@
   .eventdate{width: 30%;}
   .eventdatetext{font-size: 1.2rem; width: 100%;top:42%}
   .page2wrapper{flex-direction: column;}
+  .bridegroomdetailsleftcontainer{width: 100%;height: 40vh;}
   .leftcontainer{width: 100%;height: 40vh;}
   .lastrightcontainer{width: 100%;height: auto;}
   .rightcontainer{width:100%;height: 60vh;margin: 0;}
   .rightbottomlogo{width: 20%;}
   .leftcontainerimg{width: 70%;}
+  .bridegroomdetailsleftcontainerimg{width: 300px;height: 300px;}
    .receptionleftcontainer{width: 100%;height: 40vh;}
    .lastleftcontainer{width: 100%;height: 50vh;}
    .linkleftcontainer{width: 100%;height: 20vh;}
@@ -588,6 +604,7 @@
  }
 
  @media only screen and (max-width: 600px) {
+  .bridegroomdetailsleftcontainerimg{width: 200px;height: 200px;}
 .bridebadge{height: 120px;width: 120px;}
 .groombadge{height: 120px;width: 120px;}
 .eventdate{width: 50%;}
