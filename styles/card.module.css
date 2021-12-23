@@ -255,7 +255,7 @@
   animation: swipin-left 3s;
 }
 .bridegroomdetailsleftcontainerimg{
-  width: 400px;border-radius: 50%;height: 400px;
+  width: 400px;border-radius: 50%;height: 400px;object-fit: cover;
 }
 .leftcontainerimg{
   width: 80%;

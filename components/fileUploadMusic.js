@@ -71,6 +71,7 @@ export default function FileUpload(props){
         setUploadBar(false);
         setErrorUpload(false);
         setSuccess(true);
+        props.setSong("./uploads/"+props.name);
         props.setStatus(true);
       }
       else{

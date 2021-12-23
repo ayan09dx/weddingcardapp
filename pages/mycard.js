@@ -109,13 +109,13 @@ export default function MyCard(props){
                             <option value="./Sanai.mp3">Sanai</option>
                             <option value="./Laze.mp3">Laze Ranga Holo</option>
                             <option value="./Lila.mp3">Lila Bali Lila Bali</option>
-                            <option value="own">Your Custom Song</option>
+                            <option value={"./uploads/"+props.profile.id+".mp3"}>Your Custom Song</option>
                             <option value="upload">Upload Song</option>
                             <option value="na">No song required</option>
                         </select>
                     </div>
                     <div style={song==='upload'?{marginTop:25}:{display:'none'}}>
-                     <FileUpload label="Upload Song" setStatus={setUploadStatus}  name={props.profile.id+".mp3"}/>
+                     <FileUpload label="Upload Song" setStatus={setUploadStatus} setSong={setSong}  name={props.profile.id+".mp3"}/>
                     </div>
                     
                 </div>
@@ -125,7 +125,7 @@ export default function MyCard(props){
             </div>
             <div className="input-container" style={song==='na'||song==='upload'?{display:'none'}:{}}>
                  <h3>Play Current Song</h3>
-                 <audio src={song==='own'?"/uploads/"+props.profile.id+".mp3":song} controls style={{width:'100%'}}>
+                 <audio src={song} controls style={{width:'100%'}}>
                     <p>If you are reading this, it is because your browser does not support the audio element.</p>
                 </audio>
                 </div>

@@ -8,6 +8,7 @@ import styles from '../styles/mydetails.module.css'
 import jwt from 'jsonwebtoken';
 import ErrorSnackbar from '../utils/errorSnackbar'
 import SuccessSnackbar from '../utils/successSnackbar'
+import Router from 'next/router';
 
 const API_SECRET_KEY = process.env.API_SECRET_KEY;
 
@@ -405,7 +406,7 @@ const  onSubmit=async ()=>{
           if(json.message==='ok'){
             setSuccessSubmit(true);
             setEdit(false);
-            //router.push('/login');
+            Router.reload();
           }
           else {
             setErrorSubmit(true)
@@ -665,13 +666,13 @@ const  onSubmit=async ()=>{
             <div className="input-container" style={language!=='' && edit?{}:{display:'none'}}>
                    <FileUpload label="কনের - Bride's Image" setStatus={setBrideImage} name={props.id+"_bride"}  setImageName={setBrideImageName}/>
             </div>
-            <img src={"/uploads/"+brideimagename} style={{height:200,objectFit:'contain'}}/>
+            <img src={"/uploads/"+brideimagename} style={edit?{display:'none'}:{height:200,objectFit:'contain'}}/>
 
             <h3 style={{color:'#004ABD'}}>Groom Image</h3>
             <div className="input-container" style={language!=='' && edit?{}:{display:'none'}}>
                    <FileUpload label="বরের - Grooms's Image" setStatus={setGroomImage} name={props.id+"_groom"} setImageName={setGroomImageName}/>
             </div>
-            <img src={"/uploads/"+groomimagename} style={{height:200,objectFit:'contain'}}/>
+            <img src={"/uploads/"+groomimagename} style={edit?{display:'none'}:{height:200,objectFit:'contain'}}/>
             <br/>
             <button  className="btn" onClick={()=>{setEdit(true);window.scrollTo({top: 0,behavior: 'smooth'});}} style={ !edit? {} : { display: 'none' }} >Edit</button>
             <div style={{display:'flex'}}>

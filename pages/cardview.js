@@ -101,8 +101,8 @@ console.log(load)
               <img src="siderotator.svg" alt="right" className={styles.spinwheel} />
             </div></>
 :<></>}
-      {load!=="" && load!=="page1"?
-      <audio src="./Sanai.mp3" autoPlay loop>
+      {load!==""?
+      <audio src={userData.song} autoPlay loop>
           <p>If you are reading this, it is because your browser does not support the audio element.</p>
       </audio>
 :<></>}

@@ -34,11 +34,11 @@ export default function Page4(props){
           <img src="./baji.gif" alt="namaste" className={styles.fireworks}/>
             <div className={styles.bridebadge}>
                 <img src={"/uploads/"+props.data.groomimagename} alt="groomimg" className={styles.badgeimg}/>
-                <h3 style={{padding:0,margin:0}}>{lang.id==='en'?props.data.groomname:props.data.groomnamebangla}</h3>
+                <h3 style={{padding:0,margin:0,color:'#B71A00'}}>{lang.id==='en'?props.data.groomname:props.data.groomnamebangla}</h3>
             </div>
             <div className={styles.groombadge}>
             <img src={"/uploads/"+props.data.brideimagename} alt="groomimg" className={styles.badgeimg}/>
-            <h3 style={{padding:0,margin:0}}>{lang.id==='en'?props.data.bridename:props.data.bridenamebangla}</h3>
+            <h3 style={{padding:0,margin:0,color:'#B71A00'}}>{lang.id==='en'?props.data.bridename:props.data.bridenamebangla}</h3>
             </div>
           </div>
           <div className={styles.lastrightcontainer}>

@@ -8,10 +8,10 @@ import 'moment/locale/en-in';
 export default function Page5(props){
     const [load,setLoad]=useState(false);
     useEffect(() => {
-      if(props.data.type==='ex'){
+      if(props.data.type==='ex'&& props.load==='page5'){
         props.setPage('page2');
       }
-      else if(props.load==='page5'){
+      else if(props.load==='page5' && props.data.type==='all'){
                   setLoad(true);
                   const timer = setTimeout(() => {
                     props.setPage('page6');
