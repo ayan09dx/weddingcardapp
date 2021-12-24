@@ -77,11 +77,11 @@ export default function MyCard(props){
       load?
       <div style={{padding:20}}>
         <div className="cardviewer">
-            <div className="cardlangselector">
+            <div className="cardlangselector" style={userData.language==='en'||userData.language==='all'?{}:{display:'none'}}>
                <img src="./en.jpeg" className="selectorimg"/>
                <button className="btn"> <a href={props.origin+"/cardview?token="+token+"&lang=en"} target="_blank">View in English</a></button>
             </div>
-            <div className="cardlangselector">
+            <div className="cardlangselector" style={userData.language==='bn'||userData.language==='all'?{}:{display:'none'}}>
                <img src="./bn.png" className="selectorimg"/>
                <button className="btn"> <a href={props.origin+"/cardview?token="+token+"&&lang=bn"} target="_blank">View in Bengali</a></button>
             </div>

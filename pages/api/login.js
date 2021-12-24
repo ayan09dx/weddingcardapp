@@ -14,9 +14,9 @@ export default async function handleLogin(req,res){
   
   
   let doc = await db.collection('users').findOne({email:data.email,password:data.password})
-  //console.log(testJSON(doc))
+
   if(doc!==null && testJSON(doc)){
-    user ={userid:doc.email,name:doc.fullName,id:doc._id.toString()}
+    user ={userid:doc.email,name:doc.username,id:doc._id.toString()}
     let token=jwt.sign(user,SECRET_KEY,{expiresIn:'1d'});
     res_data={message:'ok',token:'Bearer ' + token}
   }

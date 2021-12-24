@@ -8,7 +8,10 @@ import 'moment/locale/en-in';
 export default function Page2(props){
     const [load,setLoad]=useState(false);
     useEffect(() => {
-        if(props.load==='page2'){
+        if(props.load==='page2' && props.inviteType==="reception"){
+          props.setPage('page3');
+        }
+        else if(props.load==='page2'){
                   setLoad(true);
                   const timer = setTimeout(() => {
                     props.setPage('page3');
@@ -21,6 +24,7 @@ export default function Page2(props){
        }
    // eslint-disable-next-line react-hooks/exhaustive-deps
    },[props.load])
+   console.log(props.inviteType)
    let marraigeday=props.lang.days[moment(props.data.marraigedate).day()];
     return(
         load?

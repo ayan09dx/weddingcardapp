@@ -24,7 +24,7 @@ const [load,SetLoad]=useState('');
 const [pageload,SetPageLoad]=useState(false);
 const [lang,setLang]=useState(EN);
 const [guest,setGuest]=useState('');
-const [email,setEmail]=useState('');
+const [invitetype,setInviteType]=useState('');
 const router =useRouter();
 const [userData,setUserData]=useState({});
 
@@ -36,8 +36,8 @@ const setPage=(val)=>{
 SetLoad(val);
 }
 
-const getDetails=async(email,guest,lang)=>{
- //console.log("here")
+const getDetails=async(email,guest,lang,invitetype)=>{
+
   let payload={token:jwt.sign(email,API_SECRET_KEY)};
        const res = await fetch('/api/getDetails', {
            method: 'post',
@@ -48,6 +48,7 @@ const getDetails=async(email,guest,lang)=>{
           setUserData(json.data)
           setGuest(guest);
           setLang(lang==='bn'?BN:EN);
+          setInviteType(invitetype);
           SetPageLoad(true)
           return true
          }
@@ -59,16 +60,19 @@ useEffect(() => {
 
 if(router.query.token){
   let reqdata=verifyAPIToken(router.query.token);
+  let lang='en';
   if (reqdata){
     let guest=reqdata.guest?reqdata.guest:'';
-    let email=reqdata.email?reqdata.email:'';   
-    let lang=router.query.lang?router.query.lang:'en'
-    getDetails(email,guest,lang)
+    let email=reqdata.email?reqdata.email:'';
+    let invitetype=reqdata.type?reqdata.type:'both';
+    if(reqdata.lang)lang=reqdata.lang;
+    else{lang=router.query.lang?router.query.lang:'en'} 
+    getDetails(email,guest,lang,invitetype)
   }
 }
 },[router.query])
 
-console.log(load)
+
   return (
     pageload?
     <div className={styles.container}>
@@ -79,9 +83,9 @@ console.log(load)
       </Head>
       <div className={styles.main}>
         <Page1 load={load} setPage={setPage} lang={lang} data={userData}/>
-        <Page2 load={load} setPage={setPage} lang={lang} data={userData}/>
-        <Page3 load={load} setPage={setPage} lang={lang} data={userData}/>
-        <Page4 load={load} setPage={setPage} lang={lang} data={userData}/>
+        <Page2 load={load} setPage={setPage} lang={lang} data={userData} inviteType={invitetype}/>
+        <Page3 load={load} setPage={setPage} lang={lang} data={userData} inviteType={invitetype}/>
+        <Page4 load={load} setPage={setPage} lang={lang} data={userData} inviteType={invitetype}/>
         <Page5 load={load} setPage={setPage} lang={lang} data={userData}/>
         <Page6 load={load} setPage={setPage} lang={lang} data={userData}/>
       </div>

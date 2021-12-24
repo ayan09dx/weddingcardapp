@@ -9,10 +9,10 @@ export default async function handleLogin(req,res){
   let data = JSON.parse(req.body);
   let res_data="";
   data = verifyAPIToken(data.token);
-  console.log(data)
+
   if(data){
   let doc = await db.collection('details').updateOne({email:data.email},{$set:{song:data.song,type:data.type}})
-   console.log(doc)
+
   if(doc!==null){
     res_data={message:'ok'}
   }

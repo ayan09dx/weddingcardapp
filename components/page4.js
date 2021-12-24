@@ -47,21 +47,20 @@ export default function Page4(props){
           <p style={lang.id==='en'?{fontFamily:'SignPainter',fontSize:24,color:'#B71A00',maxWidth:'200px',textAlign:'center'}:{fontFamily:'Bangla',fontSize:24,color:'#B71A00',maxWidth:'200px',textAlign:'center'}}>
               {lang.lastpagereq}
           </p>
-          <div style={{width:'90%',textAlign:'center'}}>
+          <div style={props.inviteType!=="reception"?{width:'90%',textAlign:'center'}:{display:'none'}}>
           <p style={lang.id==='en'?{fontFamily:'SignPainter',fontSize:24,color:'#B71A00',textAlign:'center',wordWrap:'break-word'}:{fontFamily:'Bangla',fontSize:24,color:'#B71A00',textAlign:'center',wordWrap:'break-word'}}>
               {lang.biye}<br/>{marriagedate}<br/>{marraigeday}<br/><br/>{props.lang.id==='en'?props.data.mhall:props.data.mhallbangla}
           </p>
 
           </div>
          
-          <div style={{width:'90%',textAlign:'center'}}>
+          <div style={props.inviteType!=="wedding"?{width:'90%',textAlign:'center'}:{display:'none'}}>
           <p style={lang.id==='en'?{fontFamily:'SignPainter',fontSize:24,color:'#B71A00',textAlign:'center',wordWrap:'break-word'}:{fontFamily:'Bangla',fontSize:24,color:'#B71A00',textAlign:'center',wordWrap:'break-word'}}>
               {lang.reception}<br/>{receptiondate}<br/>{receptionday}<br/><br/>{props.lang.id==='en'?props.data.rhall:props.data.rhallbangla}
           </p>
-        
-          <button style={{marginBottom:30,marginTop:30}} onClick={playAgain} className='btn'>{lang.repeat}</button>
           </div>
-          
+
+          <button style={{marginBottom:30,marginTop:30,width:'90%'}} onClick={playAgain} className='btn'>{lang.repeat}</button>
           </div>
     
         </div>

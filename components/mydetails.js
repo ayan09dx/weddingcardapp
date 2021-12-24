@@ -394,9 +394,9 @@ const  onSubmit=async ()=>{
         bridefathername:bridefathername,bridefathernamebangla:bridefathernamebangla,bridemothername:bridemothername,bridemothernamebangla:bridemothernamebangla,bridehome:bridehome,bridehomebangla:bridehomebangla,
         groomfathername:groomfathername,groomfathernamebangla:groomfathernamebangla,groommothername:groommothername,groommothernamebangla:groommothernamebangla,
         groomhome:groomhome,groomhomebangla:groomhomebangla}
-        console.log(req_data)
+      
         let payload={token:jwt.sign(req_data,API_SECRET_KEY,{expiresIn:'300s'})};
-       // console.log(jwt.verify(payload.token,API_SECRET_KEY))
+  
         const res = await fetch(props.apiURL+'/enterDetails', {
             method: 'post',
             body: JSON.stringify(payload)

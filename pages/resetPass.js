@@ -97,8 +97,7 @@ export default function SignUp(props){
             router.push('/')
           }
         if(router.query.token){
-            let userdata=verifyAPIToken(router.query.token);
-            console.log(userdata);
+            let userdata=verifyAPIToken(router.query.token);;
             if(userdata){
                 setEmail(userdata.email);
                 setUsername(userdata.username);

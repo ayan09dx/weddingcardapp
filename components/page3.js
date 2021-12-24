@@ -8,7 +8,10 @@ import 'moment/locale/en-in';
 export default function Page3(props){
     const [load,setLoad]=useState(false);
     useEffect(() => {
-        if(props.load==='page3'){
+      if(props.inviteType==="wedding" && props.load==='page3'){
+        props.setPage('page4');
+      }
+        else if(props.load==='page3'){
                   setLoad(true);
                   const timer = setTimeout(() => {
                     props.setPage('page4');
